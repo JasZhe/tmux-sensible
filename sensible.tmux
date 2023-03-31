@@ -148,14 +148,6 @@ main() {
 		tmux bind-key "$prefix_without_ctrl" last-window
 	fi
 
-	# easier switching between next/prev window
-	if key_binding_not_set "C-p"; then
-		tmux bind-key C-p previous-window
-	fi
-	if key_binding_not_set "C-n"; then
-		tmux bind-key C-n next-window
-	fi
-
 	# source `.tmux.conf` file - as suggested in `man tmux`
 	if key_binding_not_set "R"; then
 		local tmux_config=$(get_tmux_config)
